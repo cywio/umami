@@ -71,7 +71,7 @@ export default async (req, res) => {
     url = removeTrailingSlash(url);
   }
 
-  let pageview_id = null;
+  let pageview_id = {};
   if (type === 'pageview') {
     pageview_id = await savePageView(website_id, { session_id, session_uuid, url, referrer });
   } else if (type === 'event') {
@@ -82,5 +82,5 @@ export default async (req, res) => {
 
   const token = await createToken({ website_id, session_id });
 
-  return send(res, {token,session_id,view_id:pageview_id.view_id});
+  return send(res, {token,session_id,view_id:pageview_id?.view_id || null});
 };
