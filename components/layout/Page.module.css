@@ -4,7 +4,7 @@
   flex-direction: column;
   padding: 0 30px;
   background: var(--gray50);
-  border: 1px solid #e7e7e7;
+  border: 1px solid var(--gray300);
   border-radius: 10px;
   padding-bottom: 20px;
 }
