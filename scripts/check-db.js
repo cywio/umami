@@ -29,15 +29,6 @@ async function checkConnection() {
 }
 
 async function checkTables() {
-  try {
-    await prisma.account.findFirst();
-
-    success('Database tables found.');
-  } catch (e) {
-    console.log('Adding tables...');
-
-    console.log(execSync('prisma migrate deploy').toString());
-  }
 }
 
 async function run(cmd, args) {
