@@ -66,6 +66,7 @@ model session {
   language     String?    @db.VarChar(35)
   country      String?    @db.Char(2)
   city         String?
+  coordinates  Float[]
   hash         String?
   region       String?
   asn          String?
